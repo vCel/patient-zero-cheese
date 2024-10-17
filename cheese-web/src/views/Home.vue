@@ -25,6 +25,7 @@ onBeforeMount(async () => {
     <header class="app-header">
       <div class="app-heading">PZ Cheeseria</div>
       <div class="cheese-calculator">
+        <div class="price-calculator-label">Weight (kg)</div>
         <PriceCalculator v-model="priceMultiplier" />
       </div>
     </header>

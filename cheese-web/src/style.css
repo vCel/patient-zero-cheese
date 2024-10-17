@@ -1,3 +1,5 @@
+/* Styling not particularly well written */
+
 html,
 body {
   margin: 0;
@@ -6,6 +8,7 @@ body {
 
 .app-main {
   width: min(100%, 50rem);
+  padding-bottom: 2em;
 }
 
 .wrapper {
@@ -76,6 +79,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   margin-right: 0.5em;
+  word-wrap: break-word;
 }
 
 .card-price .cheese-price-label {
@@ -111,16 +115,39 @@ body {
 .cheese-details .cheese-image img {
   display: block;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.cheese-details-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+.cheese-details-price > .cheese-price-value {
+  font-size: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 15rem;
 }
 
-.cheese-details-content > .cheese-price {
-  justify-self: center;
+.cheese-details-content > .cheese-details-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 100%;
+}
+
+.cheese-price-input {
+  display: flex;
+  align-items: end;
+  width: max(100%, 10em);
+}
+
+.cheese-price-input > .price-calculator {
+  width: min(100%, 15em);
+}
+
+.cheese-price-input input[type="number"] {
+  height: 5rem;
+  font-size: 4rem;
+}
+
+#kilo {
+  font-size: 4rem;
 }

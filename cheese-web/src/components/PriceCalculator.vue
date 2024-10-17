@@ -8,10 +8,11 @@ defineEmits(["update:modelValue"]);
 
 <template>
   <div class="price-calculator">
-    <div class="price-calculator-label">Weight (kg)</div>
     <div class="price-calculator-input">
       <input
         type="number"
+        min="0"
+        max="100"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
       />
