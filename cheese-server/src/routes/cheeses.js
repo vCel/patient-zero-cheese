@@ -5,7 +5,8 @@ var router = express.Router();
 
 /* GET cheese listing. */
 router.get("/", function (req, res, next) {
-    return JSON.stringify(cheeseList);
+    console.log('here')
+    return res.json(cheeseList);
 })
 
 module.exports = router;

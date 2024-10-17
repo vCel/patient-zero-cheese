@@ -1,0 +1,45 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "PZ Cheeseria API",
+    "description": "The Cheese API of PZ Cheeseria.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "cheeses": {
+      "get": {
+        "description": "Returns a list of all cheeses PZ Cheeseria offers."
+      }
+    },
+    "new_cheese": {
+      "post": {
+        "description": "Creates a new cheese entry.",
+        "requestBody": {
+          "description": "The credentials of the user to log in.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Cheddar"
+                  },
+                  "colour": {
+                    "type": "string",
+                    "example": "Yellow"
+                  },
+                  "price_per_kilo": {
+                    "type": "number",
+                    "example": 4.99
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
