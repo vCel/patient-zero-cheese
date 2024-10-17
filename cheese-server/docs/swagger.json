@@ -1,0 +1,31 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "PZ Cheeseria API",
+        "description": "The Cheese API of PZ Cheeseria.",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "cheeses": {
+            "get": {
+                "description": "Returns a list of all cheeses PZ Cheeseria offers."
+            }
+        },
+        "cheese/{id}": {
+            "get": {
+                "description": "Returns details of a cheese with the given ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "The ID of the cheese.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
