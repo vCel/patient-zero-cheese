@@ -55,6 +55,72 @@
           }
         }
       }
+    },
+    "/update_cheese/{id}": {
+      "patch": {
+        "description": "Updates an existing cheese entry.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the cheese to update.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The credentials of the user to log in.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Cheddar"
+                  },
+                  "colour": {
+                    "type": "string",
+                    "example": "Yellow"
+                  },
+                  "price_per_kilo": {
+                    "type": "number",
+                    "example": 4.99
+                  },
+                  "image": {
+                    "type": "string",
+                    "example": "image.png"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "This cheese is really good!"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete_cheese/{id}": {
+      "delete": {
+        "description": "Deletes an existing cheese entry.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the cheese to delete.",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ]
+      }
     }
+        
   }
 }

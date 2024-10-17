@@ -8,8 +8,8 @@ const cheeseData = fs.readFileSync(fileName, 'utf8');
 // Parse the JSON string into an object
 const cheeseList = JSON.parse(cheeseData);
 
-/* GET cheese listing. */
-router.post("/", function (req, res, next) {
+/* Create cheese listing. */
+router.post("/", function (req, res) {
 
   const { name, colour, price_per_kilo } = req.body;
 
@@ -21,13 +21,15 @@ router.post("/", function (req, res, next) {
     id: Math.max(...cheeseList.cheeses.map(cheese => cheese.id)) + 1,
     name: name,
     colour: colour,
+    image: "",
     price_per_kilo: price_per_kilo,
+    description: "",
   };
-  console.log("yoyoyo");
 
   cheeseList.cheeses.push(newCheese);
-  const updatedCheeseData = JSON.stringify(cheeseList, null, 2); // Pretty formatted JSON
+  const updatedCheeseData = JSON.stringify(cheeseList, null, 2);
 
+  // Adds cheese to cheese-list.json
   try {
     fs.writeFileSync(fileName, updatedCheeseData, 'utf8');
     res.status(201).json({ message: "Cheese added successfully!" });

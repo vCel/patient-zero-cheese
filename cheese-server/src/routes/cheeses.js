@@ -5,7 +5,6 @@ var router = express.Router();
 
 /* GET cheese listing. */
 router.get("/", function (req, res, next) {
-    console.log('here')
     return res.json(cheeseList);
 })
 
