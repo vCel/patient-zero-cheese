@@ -44,6 +44,8 @@ body {
   height: 8em;
   overflow: hidden;
   box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
+  color: black;
+  text-decoration: none;
 }
 
 .card-container > .card-image {
@@ -56,12 +58,14 @@ body {
 }
 
 .card-container .card-image img {
+  display: block;
   max-height: 100%;
 }
 
 .card-container .cheese-name {
   font-size: 1.25rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .card-container .card-price {
@@ -78,7 +82,6 @@ body {
   font-weight: bold;
 }
 
-
 .price-calculator {
   width: 5.5em;
 }
@@ -91,4 +94,33 @@ body {
   outline: none;
   border: none;
   width: 100%;
+}
+
+.cheese-details {
+  display: flex;
+  gap: 1em;
+}
+
+.cheese-details .cheese-image {
+  width: min(100%, 30em);
+  border: 1px solid black;
+  padding: 0.2em;
+  margin: 0;
+}
+
+.cheese-details .cheese-image img {
+  display: block;
+  width: 100%;
+}
+
+.cheese-details-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.cheese-details-content > .cheese-price {
+  justify-self: center;
 }

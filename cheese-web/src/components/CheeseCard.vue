@@ -17,10 +17,12 @@ function getTotalPrice() {
     <div class="card-image">
       <img :src="cheese.image" />
     </div>
+    <!-- Show cheese name and colour -->
     <div class="card-content">
       <div class="cheese-name">{{ cheese.name }}</div>
       <div class="cheese-colour">Colour: {{ cheese.colour }}</div>
     </div>
+    <!-- Show price and total price of cheese per kg -->
     <div class="card-price">
       <div class="cheese-price">
         <div class="cheese-price-label">Price / kg</div>

@@ -8,7 +8,7 @@ defineEmits(["update:modelValue"]);
 
 <template>
   <div class="price-calculator">
-    <div class="price-calculator-label">Weight</div>
+    <div class="price-calculator-label">Weight (kg)</div>
     <div class="price-calculator-input">
       <input
         type="number"

@@ -1,20 +1,20 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { RouterLink } from "vue-router";
+import { ref, onBeforeMount } from "vue";
 import { getCheeseList } from "../../api/get_cheese";
 
-import CheeseCard from '../components/CheeseCard.vue';
-import PriceCalculator from '../components/PriceCalculator.vue';
+import CheeseCard from "../components/CheeseCard.vue";
+import PriceCalculator from "../components/PriceCalculator.vue";
 
 const cheeseList = ref([]);
 const priceMultiplier = ref("1");
 
-// Fetch cheese list on mount
-onMounted(async () => {
+// Fetch cheese list before mount
+onBeforeMount(async () => {
   try {
     console.log("Fetching cheese list");
     cheeseList.value = await getCheeseList();
-  }
-  catch {
+  } catch {
     console.error("Failed to fetch cheese list");
   }
 });
@@ -30,8 +30,11 @@ onMounted(async () => {
     </header>
     <main class="app-main">
       <div class="cheese-content">
+        <!-- Generates a list of cheese cards -->
         <div v-for="(cheese, index) in cheeseList.cheeses" :key="index">
-          <CheeseCard :cheese="cheese" :priceMultiplier="priceMultiplier" />
+          <RouterLink style="text-decoration: none;" :to="{ path: '/cheese/' + cheese.id }">
+            <CheeseCard :cheese="cheese" :priceMultiplier="priceMultiplier" />
+          </RouterLink>
         </div>
       </div>
     </main>
