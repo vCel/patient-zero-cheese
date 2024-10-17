@@ -10,13 +10,14 @@ const cheeseList = JSON.parse(cheeseData);
 
 /* Create cheese listing. */
 router.post("/", function (req, res) {
-
   const { name, colour, price_per_kilo } = req.body;
 
+  // Check if name and colour are provided
   if (!name || !colour) {
     return res.status(400).json({ error: "Missing name or colour" });
   }
 
+  // Create new cheese
   const newCheese = {
     id: Math.max(...cheeseList.cheeses.map(cheese => cheese.id)) + 1,
     name: name,
@@ -26,6 +27,7 @@ router.post("/", function (req, res) {
     description: "",
   };
 
+  // Adds cheese to json string
   cheeseList.cheeses.push(newCheese);
   const updatedCheeseData = JSON.stringify(cheeseList, null, 2);
 

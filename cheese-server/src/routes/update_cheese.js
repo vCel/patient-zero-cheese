@@ -12,15 +12,18 @@ router.patch("/:id", function (req, res) {
     const { id } = req.params;
     const { name, colour, price_per_kilo, image, description } = req.body;
 
+    // Check if ID exists in the params
     if (!id) {
         return res.status(400).json({ error: "Missing ID" });
     }
     const cheeseIndex = cheeseList.cheeses.findIndex((cheese) => cheese.id == id);
 
+    // Check if cheese exists
     if (cheeseIndex === -1) {
         return res.status(404).json({ error: "Cheese not found" });
     }
 
+    // Update cheese
     cheeseList.cheeses[cheeseIndex] = {
         ...cheeseList.cheeses[cheeseIndex],
         name: name || cheeseList.cheeses[cheeseIndex].name,
