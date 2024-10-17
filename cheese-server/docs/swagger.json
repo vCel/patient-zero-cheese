@@ -10,22 +10,6 @@
             "get": {
                 "description": "Returns a list of all cheeses PZ Cheeseria offers."
             }
-        },
-        "cheese/{id}": {
-            "get": {
-                "description": "Returns details of a cheese with the given ID.",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "description": "The ID of the cheese.",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "number"
-                        }
-                    }
-                ]
-            }
         }
     }
 }
