@@ -6,12 +6,27 @@
     "version": "1.0.0"
   },
   "paths": {
-    "cheeses": {
+    "/cheeses": {
       "get": {
-        "description": "Returns a list of all cheeses PZ Cheeseria offers."
+        "description": "Returns a list of all cheeses PZ Cheeseria offers.",
+        "responses": {
+          "200": {
+            "description": "An array of countries. An example of the first five elements in the array is shown below.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
-    "new_cheese": {
+    "/new_cheese": {
       "post": {
         "description": "Creates a new cheese entry.",
         "requestBody": {
