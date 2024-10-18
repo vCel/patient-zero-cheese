@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build: ./cheese-web
+    container_name: pz-cheeseria-frontend
+    ports:
+      - '80:80'
+    depends_on:
+      - backend
+  
+  backend:
+    build: ./cheese-api
+    container_name: pz-cheeseria-backend
+    ports:
+      - '3000:3000'
