@@ -1,7 +1,7 @@
 # PZ Cheeseria
 A MVP of the PZ Cheeseria POC that display a selection of cheese that could be purchased in-store. It also features a price calculator to show customers the total price of the cheese based on the weight.
 
-# Potential Features
+## Potential Features
 The features that could be added are to use the other endpoints and make it possible for administrators to add, edit or delete cheese entries. This would also require an account system.
 
 # How to run
