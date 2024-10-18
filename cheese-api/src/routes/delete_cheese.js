@@ -3,6 +3,8 @@ var express = require("express");
 var router = express.Router();
 
 var fs = require('fs');
+
+// Reads the list of cheese from cheese-list.json
 const cheeseData = fs.readFileSync(fileName, 'utf8');
 
 // Parse the JSON string into an object

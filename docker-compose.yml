@@ -1,7 +1,7 @@
 services:
   frontend:
     build: ./cheese-web
-    container_name: pz-cheeseria-frontend
+    container_name: cheese-web
     ports:
       - '80:80'
     depends_on:
@@ -9,6 +9,13 @@ services:
   
   backend:
     build: ./cheese-api
-    container_name: pz-cheeseria-backend
+    container_name: cheese-api
     ports:
       - '3000:3000'
+    develop:
+      watch:
+      - action: sync
+        path: ./src/data
+        target: ./src/data/cheese-list.json
+        ignore:
+          - node_modules/

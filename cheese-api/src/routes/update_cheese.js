@@ -3,6 +3,8 @@ var express = require("express");
 var router = express.Router();
 
 var fs = require('fs');
+
+// Reads the list of cheese from cheese-list.json
 const cheeseData = fs.readFileSync(fileName, 'utf8');
 
 // Parse the JSON string into an object
@@ -16,6 +18,7 @@ router.patch("/:id", function (req, res) {
     if (!id) {
         return res.status(400).json({ error: "Missing ID" });
     }
+    
     const cheeseIndex = cheeseList.cheeses.findIndex((cheese) => cheese.id == id);
 
     // Check if cheese exists
