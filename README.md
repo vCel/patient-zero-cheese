@@ -15,9 +15,9 @@ https://github.com/vCel/patient-zero-cheese.git
 docker compose up --build
 ```
 3. Now the application should be running and the website could be accessed through:
-- Website: `localhost` (Port 80)
-- Backend: `localhost:3000`
-- API Docs: `localhost:3000/api-docs`
+- Website: `http://localhost` (Port 80)
+- Backend: `http://localhost:3000`
+- API Docs: `http://localhost:3000/api-docs`
 
 
 ## Dev Environment
