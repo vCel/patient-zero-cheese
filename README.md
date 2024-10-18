@@ -3,6 +3,7 @@ A MVP of the PZ Cheeseria POC that display a selection of cheese that could be p
 
 ## Potential Features
 The features that could be added are to use the other endpoints and make it possible for administrators to add, edit or delete cheese entries. This would also require an account system.
+The current iteration of the app is also lacking a proper database, so a noSQL database, such as mongoDB could be implemented.
 
 # How to run
 ## Docker Compose
